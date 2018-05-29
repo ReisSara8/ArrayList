@@ -1,0 +1,46 @@
+
+import java.util.ArrayList;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Alunos
+ */
+public class Exemplo01 {
+    
+    public static void main (String [] args){
+            ArrayList<Integer> numeros = new ArrayList<>(); 
+            
+            //adicionar 3 numeros ao ArrayList
+            numeros.add(10);//adiciona na posicao 0
+            numeros.add(20);//adiciona na posicao 1
+            numeros.add(30);//adiciona na posicao 2
+            
+            System.out.println("Números: ");
+            System.out.println(numeros.get(0));//pega na posicao 0
+            System.out.println(numeros.get(1));//pega na posicao 1
+            System.out.println(numeros.get(2));//pega na posicao 3
+            
+            System.out.println("Tamanho: "
+                     +numeros.size());//tamanho do arraylist
+            
+            numeros.remove(1);//apaga elemento do Arraylist
+            //pelo indice
+       for(int i = 40; i <=100; i = i +10){
+           numeros.add(i);
+       }
+       
+       System.out.println("Tamanho: "
+                  +numeros.size());//tamanho do ArrayList
+        System.out.println("Tamanho: ");
+       for(int i = 0; i < numeros.size(); i++){
+           System.out.println(numeros.get(1));
+       }
+                    
+    }
+}
