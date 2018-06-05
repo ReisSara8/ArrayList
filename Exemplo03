@@ -1,0 +1,62 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package exemploarraylist;
+import java.util.ArrayList;
+/**
+ *
+ * @author Alunos
+ */
+public class Exemplo03 {
+    
+    public static void main (String [] args ){
+        
+        ArrayList<String> nomes = new ArrayList<>();
+        nomes.add("Jennifer");
+        nomes.add("Eu aqui");
+//      nomes.add("Ponei");
+//      nomes.add("Homem de Cadeira Ambulante ");
+        
+        int quantDeNomes = nomes.size();
+        System.out.println(quantDeNomes);
+        
+        String nome0 = nomes.get(0), nome1 = nomes.get(1);
+        String maiorNome = "";
+       
+        
+        //if nome0.length()>nome1.length
+        if (nomes.get(0).length() > maiorNome.length())
+        maiorNome = nomes.get(0);
+        
+        if (nomes.get(1).length() > maiorNome.length())
+        maiorNome = nomes.get(1);      
+       
+        { 
+        
+        String menorNome = "";
+        for (int i = 65; i <= 90; i++) {
+            for (int j = 65; j <= 90; j++){
+                menorNome += (char) i + "" + (char) j +"\n";
+            }
+        }
+        System.out.println(menorNome);
+        if (nomes.get(0).length() < menorNome.length()){
+            menorNome = nomes.get(0);
+        }  
+        if (nomes.get(1).length() < menorNome.length()){
+            menorNome = nomes.get(1);
+       
+        }
+            
+        System.out.println("Maior nome : " + maiorNome);
+        System.out.println("Menor nome : " + menorNome);
+        
+       
+        }
+        
+          }
+    
+    
+}
