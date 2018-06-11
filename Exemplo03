@@ -3,60 +3,102 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package exemploarraylist;
+
+package exerciciosarraylist;
+
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alunos
  */
-public class Exemplo03 {
+public class Exercicio07 {
     
-    public static void main (String [] args ){
+    public static void main (String[]args){
         
         ArrayList<String> nomes = new ArrayList<>();
-        nomes.add("Jennifer");
-        nomes.add("Eu aqui");
-//      nomes.add("Ponei");
-//      nomes.add("Homem de Cadeira Ambulante ");
-        
-        int quantDeNomes = nomes.size();
-        System.out.println(quantDeNomes);
-        
-        String nome0 = nomes.get(0), nome1 = nomes.get(1);
-        String maiorNome = "";
-       
-        
-        //if nome0.length()>nome1.length
-        if (nomes.get(0).length() > maiorNome.length())
-        maiorNome = nomes.get(0);
-        
-        if (nomes.get(1).length() > maiorNome.length())
-        maiorNome = nomes.get(1);      
-       
-        { 
-        
-        String menorNome = "";
-        for (int i = 65; i <= 90; i++) {
-            for (int j = 65; j <= 90; j++){
-                menorNome += (char) i + "" + (char) j +"\n";
-            }
+        JOptionPane.showMessageDialog(null,"                                 Bem-vindo!" +"\n" +"Por favor, insira nomes nas caixas de textos a seguir.");
+        for (int i = 0; i < 25 ; i++){
+            nomes.add(JOptionPane
+            .showInputDialog("Nomes: "));
         }
-        System.out.println(menorNome);
-        if (nomes.get(0).length() < menorNome.length()){
-            menorNome = nomes.get(0);
-        }  
-        if (nomes.get(1).length() < menorNome.length()){
-            menorNome = nomes.get(1);
-       
+          
+        JOptionPane.showMessageDialog(null,
+                "Olá, confira a seguir a listagem dos nomes que foram digitados:" + "\n"
+                +"\n1º  - " +nomes.get(0).trim().toLowerCase()
+                +"\n2º  - " +nomes.get(1)
+                +"\n3º  - " +nomes.get(2)
+                +"\n4º  - " +nomes.get(3)
+                +"\n5º  - " +nomes.get(4)
+                +"\n6º  - " +nomes.get(5)
+                +"\n7º  - " +nomes.get(6)
+                +"\n8º  - " +nomes.get(7)
+                +"\n9º  - " +nomes.get(8)
+                +"\n10º  - " +nomes.get(9)
+                +"\n11º  - " +nomes.get(10)
+                +"\n12º  - " +nomes.get(11)
+                +"\n13º  - " +nomes.get(12)
+                +"\n14º  - " +nomes.get(13)
+                +"\n15º  - " +nomes.get(14)
+                +"\n16º  - " +nomes.get(15)
+                +"\n17º  - " +nomes.get(16)
+                +"\n18º  - " +nomes.get(17)
+                +"\n19º  - " +nomes.get(18)
+                +"\n20º  - " +nomes.get(19)
+                +"\n21º  - " +nomes.get(20)
+                +"\n22º  - " +nomes.get(21)
+                +"\n23º  - " +nomes.get(22)
+                +"\n24º  - " +nomes.get(23)
+                +"\n25º  - " +nomes.get(24)
+              
+        );  
+        
+        String maiorNome = "";
+        for (int i = 0; i < nomes.size() ; i++){
+        if (nomes.get(i).length() > maiorNome.length()){
+        maiorNome = nomes.get(i);
         }
             
-        System.out.println("Maior nome : " + maiorNome);
-        System.out.println("Menor nome : " + menorNome);
-        
-       
         }
         
-          }
+        String menorNome = maiorNome;
+        for (int i = 0; i < nomes.size() ; i++){
+        if (nomes.get(i).length() < menorNome.length()){
+        menorNome = nomes.get(i);
+        }
+        
+        }
+        
+        
+        JOptionPane.showMessageDialog(null,
+                "Confira o maior e o menor nome registrados:"
+                +"\n"
+                +"\nMaior nome: "
+                +"\n" +maiorNome
+                +"\n"
+                +"\nMenor nome: "
+                +"\n" +menorNome);
+        
+        String contabilizar1 = "Pedro";
+		int contador1 = 0;
+		for(int j=0; j < nomes.size(); j++) {
+			String s = nomes.get(j);
+			if(s.contains(contabilizar1)) contador1++;
+		}
+  
+		JOptionPane.showMessageDialog(null,
+                        "A lista contém " + contador1 + " pessoas com o nome \"" + contabilizar1 +"\"");
+                
     
+        String contabilizar2 = "Ana";
+		int contador2 = 0;
+                contador2 = nomes.stream().filter((s) -> (s.contains(contabilizar2))).map((_item) -> 1).reduce(contador2, Integer::sum);
+                
+		JOptionPane.showMessageDialog(null,
+                        "A lista contém " + contador2 + " pessoas com o nome \"" + contabilizar2 +"\"");
+                
+        
+	}
+    }
     
-}
